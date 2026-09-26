@@ -3,26 +3,26 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta property="og:title" content="ئاراس و شیلان · بانگهێشتنامەی هاوسەرگیری">
+<meta property="og:title" content="خونچە و محمد · بانگهێشتنامەی هاوسەرگیری">
 <meta property="og:description" content="بانگهێشتنامەیەک، بە خۆشەویستییەوە بۆ تۆ مۆرکراوە">
-<title>ئاراس و شیلان</title>
+<title>خونچە و محمد</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400;600;700&family=Vazirmatn:wght@300;400;500;600&family=Pinyon+Script&display=swap">
 <style>
 :root{
   color-scheme: light;
-  --emerald-900:#08251D;
-  --emerald-800:#0C3328;
-  --emerald-700:#124536;
-  --gold:#C6A15B;
-  --gold-soft:#E4CC93;
-  --gold-deep:#9C7A3A;
-  --ivory:#F6F1E6;
-  --paper:#ECE4D3;
-  --ink:#1B2A24;
-  --muted:#5E6B63;
-  --line:rgba(156,122,58,.35);
+  --cream:#FBF7EF;
+  --cream-2:#F4ECDF;
+  --cream-3:#EADFCB;
+  --card:#FFFDF9;
+  --gold:#C5A56A;
+  --gold-soft:#E8D8B3;
+  --gold-deep:#8E6E3E;
+  --ink:#3A2E24;
+  --ink-soft:#5A4836;
+  --muted:#85776A;
+  --line:rgba(142,110,62,.28);
   --display:"Noto Naskh Arabic","Vazirmatn",serif;
   --body:"Vazirmatn","Noto Naskh Arabic",system-ui,sans-serif;
   --script:"Pinyon Script","Snell Roundhand",cursive;
@@ -30,7 +30,7 @@
 }
 *{box-sizing:border-box}
 html,body{height:100%}
-body{margin:0;background:var(--emerald-900);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.8;-webkit-font-smoothing:antialiased;overflow:hidden}
+body{margin:0;background:var(--cream);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.8;-webkit-font-smoothing:antialiased;overflow:hidden}
 a{color:inherit}
 :focus-visible{outline:2px solid var(--gold);outline-offset:3px}
 button{font-family:inherit}
@@ -38,42 +38,43 @@ button{font-family:inherit}
 
 /* ---------- Envelope intro ---------- */
 .intro{position:fixed;inset:0;z-index:50;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:28px;padding:24px 16px;
-  background:radial-gradient(120% 80% at 50% 20%,var(--emerald-700) 0%,var(--emerald-800) 45%,var(--emerald-900) 100%);
+  background:radial-gradient(120% 80% at 50% 15%,#FFFCF6 0%,var(--cream-2) 55%,var(--cream-3) 100%);
   transition:opacity .9s ease, visibility .9s ease;overflow:hidden}
 .intro.gone{opacity:0;visibility:hidden}
 .dust{position:absolute;inset:0;pointer-events:none}
-.dust i{position:absolute;width:3px;height:3px;border-radius:50%;background:var(--gold-soft);opacity:0;animation:twinkle 5s ease-in-out infinite}
-@keyframes twinkle{0%,100%{opacity:0;transform:translateY(0)}50%{opacity:.7;transform:translateY(-10px)}}
-.intro-line{font-family:var(--display);color:var(--gold-soft);font-size:clamp(18px,4.6vw,22px);text-align:center;margin:0;opacity:.92}
+.dust i{position:absolute;width:3px;height:3px;border-radius:50%;background:var(--gold);opacity:0;animation:twinkle 5s ease-in-out infinite}
+@keyframes twinkle{0%,100%{opacity:0;transform:translateY(0)}50%{opacity:.6;transform:translateY(-10px)}}
+.intro-line{font-family:var(--display);color:var(--ink-soft);font-size:clamp(18px,4.6vw,22px);text-align:center;margin:0}
 .envelope{position:relative;width:min(88vw,420px);aspect-ratio:1.5;perspective:1400px;max-width:100%}
-.env-back{position:absolute;inset:0;border-radius:6px;background:linear-gradient(160deg,#16503F,#0E3A2D);box-shadow:0 30px 60px -20px rgba(0,0,0,.6)}
-.env-card{position:absolute;left:6%;right:6%;top:8%;bottom:8%;background:var(--ivory);border-radius:4px;display:flex;align-items:center;justify-content:center;transition:transform 1s var(--ease) .55s;z-index:1}
-.env-card span{font-family:var(--display);color:var(--emerald-700);font-size:clamp(20px,5vw,26px);font-weight:700}
+.env-back{position:absolute;inset:0;border-radius:6px;background:linear-gradient(160deg,#EFE4D1,#E4D6BE);box-shadow:0 30px 50px -22px rgba(90,70,40,.35)}
+.env-card{position:absolute;left:6%;right:6%;top:8%;bottom:8%;background:var(--card);border:1px solid var(--line);border-radius:4px;display:flex;align-items:center;justify-content:center;transition:transform 1s var(--ease) .55s;z-index:1}
+.env-card span{font-family:var(--display);color:var(--ink);font-size:clamp(20px,5vw,26px);font-weight:700}
 .env-front{position:absolute;inset:0;z-index:2;pointer-events:none}
 .env-front svg,.env-flap svg{width:100%;height:100%;display:block}
-.env-flap{position:absolute;left:0;right:0;top:0;height:58%;z-index:3;transform-origin:top center;transition:transform .8s cubic-bezier(.4,.1,.2,1) .15s, z-index 0s .6s}
+.env-flap{position:absolute;left:0;right:0;top:0;height:58%;z-index:3;transform-origin:top center;transition:transform .8s cubic-bezier(.4,.1,.2,1) .15s, z-index 0s .6s;filter:drop-shadow(0 3px 4px rgba(90,70,40,.12))}
 .envelope.open .env-flap{transform:rotateX(180deg);z-index:0}
 .envelope.open .env-card{transform:translateY(-46%)}
 .seal{position:absolute;left:50%;top:58%;width:78px;height:78px;margin:-39px 0 0 -39px;z-index:4;border:0;padding:0;border-radius:50%;cursor:pointer;
-  background:radial-gradient(circle at 35% 30%,#E9D29A 0%,var(--gold) 45%,var(--gold-deep) 100%);
-  box-shadow:0 0 0 5px rgba(198,161,91,.25),0 8px 18px rgba(0,0,0,.45), inset 0 -3px 6px rgba(0,0,0,.25), inset 0 2px 3px rgba(255,255,255,.35);
+  background:radial-gradient(circle at 35% 30%,#EBD7A6 0%,var(--gold) 48%,var(--gold-deep) 100%);
+  box-shadow:0 0 0 5px rgba(197,165,106,.22),0 8px 16px rgba(90,70,40,.3), inset 0 -3px 6px rgba(0,0,0,.2), inset 0 2px 3px rgba(255,255,255,.4);
   display:flex;align-items:center;justify-content:center;transition:transform .5s ease, opacity .5s ease;animation:pulse 2.4s ease-in-out infinite}
-@keyframes pulse{0%,100%{box-shadow:0 0 0 5px rgba(198,161,91,.25),0 8px 18px rgba(0,0,0,.45),inset 0 -3px 6px rgba(0,0,0,.25),inset 0 2px 3px rgba(255,255,255,.35)}50%{box-shadow:0 0 0 12px rgba(198,161,91,.08),0 8px 18px rgba(0,0,0,.45),inset 0 -3px 6px rgba(0,0,0,.25),inset 0 2px 3px rgba(255,255,255,.35)}}
-.seal b{font-family:var(--script);font-weight:400;font-size:30px;color:#6E5220;text-shadow:0 1px 0 rgba(255,255,255,.35);line-height:1}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 5px rgba(197,165,106,.22),0 8px 16px rgba(90,70,40,.3),inset 0 -3px 6px rgba(0,0,0,.2),inset 0 2px 3px rgba(255,255,255,.4)}50%{box-shadow:0 0 0 12px rgba(197,165,106,.07),0 8px 16px rgba(90,70,40,.3),inset 0 -3px 6px rgba(0,0,0,.2),inset 0 2px 3px rgba(255,255,255,.4)}}
+.seal b{font-family:var(--display);font-weight:700;font-size:24px;color:#5E4623;text-shadow:0 1px 0 rgba(255,255,255,.35);line-height:1;display:flex;align-items:center;gap:3px}
+.seal b i{font-style:normal;font-family:var(--script);font-weight:400;font-size:20px}
 .envelope.open .seal{transform:scale(1.5);opacity:0;pointer-events:none;animation:none}
-.env-caption{position:absolute;left:0;right:0;bottom:12%;text-align:center;z-index:4;font-size:11px;letter-spacing:.08em;color:var(--gold-soft);opacity:.75}
+.env-caption{position:absolute;left:0;right:0;bottom:12%;text-align:center;z-index:4;font-size:11px;letter-spacing:.08em;color:var(--gold-deep);opacity:.85}
 .envelope.open .env-caption{opacity:0;transition:opacity .3s}
-.open-btn{font-size:15px;font-weight:500;color:var(--gold-soft);background:transparent;border:1px solid rgba(228,204,147,.55);padding:14px 30px;cursor:pointer;display:inline-flex;align-items:center;gap:14px;transition:background .3s,color .3s}
-.open-btn:hover{background:var(--gold-soft);color:var(--emerald-900)}
-.intro-sub{font-size:13px;color:rgba(228,204,147,.6);margin:-12px 0 0;text-align:center}
+.open-btn{font-size:15px;font-weight:500;color:var(--ink-soft);background:transparent;border:1px solid var(--gold);padding:14px 30px;cursor:pointer;display:inline-flex;align-items:center;gap:14px;transition:background .3s,color .3s}
+.open-btn:hover{background:var(--gold-deep);color:var(--card);border-color:var(--gold-deep)}
+.intro-sub{font-size:13px;color:var(--muted);margin:-12px 0 0;text-align:center}
 
 /* ---------- App shell ---------- */
-.app{position:fixed;inset:0;display:flex;flex-direction:column;background:var(--ivory)}
-.topbar{flex:none;background:var(--emerald-800);color:var(--gold-soft);display:flex;justify-content:space-between;align-items:center;padding:calc(10px + env(safe-area-inset-top,0px)) 16px 10px;border-bottom:1px solid rgba(198,161,91,.3)}
+.app{position:fixed;inset:0;display:flex;flex-direction:column;background:var(--cream)}
+.topbar{flex:none;background:var(--card);color:var(--ink);display:flex;justify-content:space-between;align-items:center;padding:calc(10px + env(safe-area-inset-top,0px)) 16px 10px;border-bottom:1px solid var(--line)}
 .topbar .brand{font-family:var(--display);font-size:18px;font-weight:600}
-.topbar .latin{font-family:var(--script);font-size:22px;direction:ltr}
-.progress{height:2px;background:rgba(198,161,91,.2);flex:none}
-.progress i{display:block;height:100%;width:0;background:var(--gold);transition:width .6s var(--ease);margin-inline-start:0}
+.topbar .mono{font-family:var(--script);font-size:24px;color:var(--gold-deep);line-height:1}
+.progress{height:2px;background:rgba(197,165,106,.2);flex:none}
+.progress i{display:block;height:100%;width:0;background:var(--gold);transition:width .6s var(--ease)}
 
 .stage{position:relative;flex:1;overflow:hidden}
 .page{position:absolute;inset:0;overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;
@@ -91,114 +92,97 @@ button{font-family:inherit}
 .page.active .st:nth-child(7){animation-delay:.48s}
 @keyframes up{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
 
-.bg-ivory{background:radial-gradient(90% 55% at 50% 0%,rgba(198,161,91,.13),transparent 70%),var(--ivory)}
-.bg-paper{background:var(--paper)}
-.bg-dark{background:linear-gradient(180deg,var(--emerald-800),var(--emerald-900));color:var(--gold-soft)}
+.bg-cream{background:radial-gradient(90% 55% at 50% 0%,rgba(197,165,106,.12),transparent 70%),var(--cream)}
+.bg-paper{background:var(--cream-2)}
+.bg-deep{background:linear-gradient(180deg,#F1E6D3,#E8DAC2)}
 
-.navbar{flex:none;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 16px calc(12px + env(safe-area-inset-bottom,0px));background:var(--ivory);border-top:1px solid var(--line);transition:background .5s}
-.app.dark .navbar{background:var(--emerald-900);border-top-color:rgba(198,161,91,.25)}
-.nav-btn{display:inline-flex;align-items:center;gap:10px;border:1px solid var(--emerald-800);background:var(--emerald-800);color:var(--gold-soft);font-size:15px;font-weight:500;padding:11px 20px;cursor:pointer;min-width:112px;justify-content:center;white-space:nowrap;transition:background .25s,opacity .3s}
-.nav-btn:hover{background:var(--emerald-700)}
+.navbar{flex:none;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 16px calc(12px + env(safe-area-inset-bottom,0px));background:var(--card);border-top:1px solid var(--line)}
+.nav-btn{display:inline-flex;align-items:center;gap:10px;border:1px solid var(--gold-deep);background:var(--gold-deep);color:var(--card);font-size:15px;font-weight:500;padding:11px 20px;cursor:pointer;min-width:112px;justify-content:center;white-space:nowrap;transition:background .25s,opacity .3s}
+.nav-btn:hover{background:#7A5D32}
 .nav-btn svg{width:16px;height:16px}
-.nav-btn.ghost{background:transparent;color:var(--emerald-800);border-color:transparent;min-width:0;padding-inline:8px}
-.app.dark .nav-btn{background:var(--gold);border-color:var(--gold);color:var(--emerald-900)}
-.app.dark .nav-btn.ghost{background:transparent;border-color:transparent;color:var(--gold-soft)}
+.nav-btn.ghost{background:transparent;color:var(--ink-soft);border-color:transparent;min-width:0;padding-inline:8px}
 .nav-btn[disabled]{opacity:0;pointer-events:none}
 .dots{display:flex;gap:7px}
-.dots button{width:7px;height:7px;border-radius:50%;border:0;padding:0;background:rgba(156,122,58,.35);cursor:pointer;transition:all .4s var(--ease)}
+.dots button{width:7px;height:7px;border-radius:50%;border:0;padding:0;background:rgba(142,110,62,.3);cursor:pointer;transition:all .4s var(--ease)}
 .dots button.on{width:22px;border-radius:4px;background:var(--gold-deep)}
-.app.dark .dots button{background:rgba(228,204,147,.3)}
-.app.dark .dots button.on{background:var(--gold)}
 
 /* ---------- Content ---------- */
 .eyebrow{font-size:13px;font-weight:500;color:var(--gold-deep);letter-spacing:.04em;margin:0 0 10px}
-.bg-dark .eyebrow{color:var(--gold)}
-h2{font-family:var(--display);font-weight:700;color:var(--emerald-800);font-size:clamp(32px,8vw,46px);line-height:1.35;margin:0;text-wrap:balance}
+h2{font-family:var(--display);font-weight:700;color:var(--ink);font-size:clamp(32px,8vw,46px);line-height:1.35;margin:0;text-wrap:balance}
 h2 em{font-style:normal;color:var(--gold-deep);font-weight:600}
-.bg-dark h2{color:var(--ivory)}
-.bg-dark h2 em{color:var(--gold)}
 .lead{color:var(--muted);font-size:16px;margin:16px 0 0}
+.note{color:var(--ink-soft);font-size:15px;margin:18px 0 0}
 .center{text-align:center}
 .ornament{display:flex;align-items:center;justify-content:center;gap:10px;color:var(--gold);margin:0 auto 20px}
 .ornament::before,.ornament::after{content:"";height:1px;width:56px;background:var(--line)}
 .ornament svg{width:14px;height:14px}
-.link-arrow{display:inline-flex;align-items:center;gap:10px;font-size:15px;font-weight:500;color:var(--emerald-700);text-decoration:none;border-bottom:1px solid var(--gold);padding-bottom:4px}
+.link-arrow{display:inline-flex;align-items:center;gap:10px;font-size:15px;font-weight:500;color:var(--ink-soft);text-decoration:none;border-bottom:1px solid var(--gold);padding-bottom:4px}
 .link-arrow:hover{color:var(--gold-deep)}
 .link-arrow svg{width:14px;height:14px}
 
 /* page 1 hero */
-.frame{position:relative;border:1px solid var(--line);padding:48px 20px 40px;outline:1px solid var(--line);outline-offset:-8px;text-align:center;overflow:hidden}
-.amp{position:absolute;left:50%;top:50%;transform:translate(-50%,-56%);font-family:var(--script);font-size:clamp(200px,52vw,300px);color:var(--gold);opacity:.13;line-height:1;pointer-events:none;direction:ltr}
-.names{position:relative;font-family:var(--display);font-weight:700;color:var(--emerald-800);font-size:clamp(52px,15vw,84px);line-height:1.2;margin:14px 0 4px}
+.frame{position:relative;background:var(--card);border:1px solid var(--line);padding:48px 20px 40px;outline:1px solid var(--line);outline-offset:-8px;text-align:center;overflow:hidden;box-shadow:0 24px 50px -30px rgba(90,70,40,.25)}
+.amp{position:absolute;left:50%;top:50%;transform:translate(-50%,-56%);font-family:var(--script);font-size:clamp(200px,52vw,300px);color:var(--gold);opacity:.14;line-height:1;pointer-events:none;direction:ltr}
+.names{position:relative;font-family:var(--display);font-weight:700;color:var(--ink);font-size:clamp(52px,15vw,84px);line-height:1.2;margin:14px 0 4px}
 .names .and{display:block;font-size:.42em;color:var(--gold-deep);font-weight:400;margin-block:2px}
-.latin-names{font-family:var(--script);font-size:28px;color:var(--gold-deep);direction:ltr;margin:0}
 .dateline{display:flex;justify-content:center;align-items:center;margin:26px auto 8px;flex-wrap:wrap}
-.dateline > *{padding-inline:16px}
-.dateline .d{font-family:var(--display);font-size:24px;font-weight:600;color:var(--emerald-700);border-inline:1px solid var(--line)}
+.dateline > *{padding-inline:14px}
+.dateline .d{font-family:var(--display);font-size:22px;font-weight:600;color:var(--ink);border-inline:1px solid var(--line)}
 .dateline .s{font-size:13px;color:var(--muted)}
 .venue-line{font-size:14px;color:var(--muted);margin:6px 0 0}
 
 /* facts */
-.fact{padding-block:26px;display:flex;flex-direction:column;align-items:center;gap:4px;text-align:center}
+.fact{padding-block:24px;display:flex;flex-direction:column;align-items:center;gap:4px;text-align:center}
 .fact + .fact{border-top:1px solid var(--line)}
 .fact .ico{width:30px;height:30px;color:var(--gold-deep);margin-bottom:6px}
 .fact .label{font-size:13px;font-weight:600;color:var(--gold-deep);letter-spacing:.04em}
-.fact .big{font-family:var(--display);font-weight:700;font-size:clamp(28px,7vw,38px);color:var(--emerald-800);line-height:1.4}
+.fact .big{font-family:var(--display);font-weight:700;font-size:clamp(28px,7vw,38px);color:var(--ink);line-height:1.4}
 .fact .small{font-size:14px;color:var(--muted);margin:0}
 .fact .link-arrow{margin-top:14px}
-.dress{font-family:var(--display);font-size:clamp(20px,5vw,24px);color:var(--emerald-700)}
+.dress{font-family:var(--display);font-size:clamp(20px,5vw,24px);color:var(--ink-soft)}
+.notice{margin-top:6px;display:flex;align-items:center;gap:10px;justify-content:center;background:var(--card);border:1px solid var(--line);padding:14px 18px;font-size:15px;color:var(--ink-soft)}
+.notice svg{flex:none;width:20px;height:20px;color:var(--gold-deep)}
 
-/* timeline */
-.tl{list-style:none;margin:32px 0 0;padding:0;position:relative}
-.tl::before{content:"";position:absolute;right:5px;top:10px;bottom:10px;width:1px;background:var(--gold)}
-.tl li{position:relative;display:grid;grid-template-columns:84px 1fr;gap:12px;padding:0 30px 30px 0}
-.tl li:last-child{padding-bottom:0}
-.tl li::before{content:"";position:absolute;right:0;top:12px;width:11px;height:11px;background:var(--gold);transform:rotate(45deg)}
-.tl time{font-size:14px;color:var(--muted);padding-top:8px}
-.tl h3{font-family:var(--display);font-size:clamp(22px,5.6vw,28px);font-weight:600;color:var(--emerald-800);margin:0;line-height:1.5}
-.tl p{margin:2px 0 0;color:var(--muted);font-size:14px}
-
-/* countdown / story */
-.note{color:rgba(246,241,230,.72);font-size:15px;margin:18px 0 0}
-.cd{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;max-width:420px;margin:34px auto 0;padding-block:22px;border-block:1px solid rgba(198,161,91,.3)}
+/* countdown */
+.cd{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;max-width:420px;margin:34px auto 0;padding-block:22px;border-block:1px solid var(--line)}
 .cd div{display:flex;flex-direction:column;gap:2px}
-.cd b{font-family:var(--display);font-size:clamp(30px,8vw,42px);font-weight:600;color:var(--gold-soft);line-height:1.3;font-variant-numeric:tabular-nums}
-.cd span{font-size:12px;opacity:.7}
-.cd-cap{font-size:13px;opacity:.7;margin:14px 0 0}
-.heart{width:36px;height:36px;color:var(--gold);margin-top:26px}
+.cd b{font-family:var(--display);font-size:clamp(30px,8vw,42px);font-weight:600;color:var(--ink);line-height:1.3;font-variant-numeric:tabular-nums}
+.cd span{font-size:12px;color:var(--muted)}
+.cd-cap{font-size:13px;color:var(--muted);margin:14px 0 0}
+.heart{width:36px;height:36px;color:var(--gold-deep);margin-top:26px}
 
 /* rsvp */
-.card{background:var(--ivory);border:1px solid var(--line);padding:32px 20px;box-shadow:0 30px 60px -30px rgba(8,37,29,.35)}
+.card{background:var(--card);border:1px solid var(--line);padding:32px 20px;box-shadow:0 30px 60px -34px rgba(90,70,40,.3)}
 .card h2{margin-bottom:22px}
 .field{display:flex;flex-direction:column;gap:8px;margin:0 0 20px;border:0;padding:0;min-width:0}
 .field > label,.field legend{font-size:14px;font-weight:500;color:var(--ink);padding:0}
 .field legend{margin-bottom:8px}
 .opt{font-weight:300;color:var(--muted);font-size:12px}
-input[type=text],textarea,select{font:inherit;font-size:16px;color:var(--ink);background:#FBF8F1;border:1px solid #D6CBB3;border-radius:0;padding:12px 14px;width:100%}
-input[type=text]::placeholder,textarea::placeholder{color:#9A9C92}
-input[type=text]:focus,textarea:focus,select:focus{outline:none;border-color:var(--gold-deep);box-shadow:0 0 0 3px rgba(198,161,91,.2)}
+input[type=text],textarea{font:inherit;font-size:16px;color:var(--ink);background:var(--cream);border:1px solid #DDD0B9;border-radius:0;padding:12px 14px;width:100%}
+input[type=text]::placeholder,textarea::placeholder{color:#A99C8C}
+input[type=text]:focus,textarea:focus{outline:none;border-color:var(--gold-deep);box-shadow:0 0 0 3px rgba(197,165,106,.2)}
 textarea{min-height:90px;resize:vertical}
 .choices{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 .choice{position:relative}
 .choice input{position:absolute;opacity:0;inset:0;cursor:pointer}
-.choice label{display:flex;align-items:center;gap:10px;border:1px solid #D6CBB3;background:#FBF8F1;padding:12px;font-size:14px;cursor:pointer;height:100%}
+.choice label{display:flex;align-items:center;gap:10px;border:1px solid #DDD0B9;background:var(--cream);padding:12px;font-size:14px;cursor:pointer;height:100%}
 .choice label::before{content:"";flex:none;width:16px;height:16px;border-radius:50%;border:1px solid var(--muted)}
-.choice input:checked + label{border-color:var(--emerald-700);background:#EEF3EE}
-.choice input:checked + label::before{border:5px solid var(--emerald-700)}
+.choice input:checked + label{border-color:var(--gold-deep);background:#F6EEDD}
+.choice input:checked + label::before{border:5px solid var(--gold-deep)}
 .choice input:focus-visible + label{outline:2px solid var(--gold);outline-offset:2px}
-.send{display:flex;justify-content:center;align-items:center;gap:12px;width:100%;background:var(--emerald-800);color:var(--gold-soft);text-decoration:none;font-size:16px;font-weight:500;padding:16px;transition:background .25s}
-.send:hover{background:var(--emerald-700)}
+.send{display:flex;justify-content:center;align-items:center;gap:12px;width:100%;background:var(--gold-deep);color:var(--card);text-decoration:none;font-size:16px;font-weight:500;padding:16px;transition:background .25s}
+.send:hover{background:#7A5D32}
 .send svg{width:20px;height:20px}
 .err{color:#9B2C2C;font-size:13px;min-height:1.4em;margin:10px 0 0;text-align:center}
 .fine{font-size:12px;color:var(--muted);text-align:center;margin:4px 0 0}
 
 /* thanks */
-.sig{font-family:var(--script);font-size:44px;color:var(--gold);direction:ltr;margin:18px 0 0;line-height:1.3}
-.replay{background:none;border:1px solid rgba(228,204,147,.5);color:var(--gold-soft);font-size:14px;padding:10px 22px;cursor:pointer;margin-top:28px}
-.replay:hover{background:rgba(228,204,147,.1)}
+.sig{font-family:var(--display);font-size:30px;font-weight:600;color:var(--gold-deep);margin:18px 0 0;line-height:1.5}
+.replay{background:none;border:1px solid var(--gold);color:var(--ink-soft);font-size:14px;padding:10px 22px;cursor:pointer;margin-top:28px}
+.replay:hover{background:var(--card)}
 
 @media (min-width:600px){.card{padding:40px 36px}}
-@media (max-width:380px){.choices{grid-template-columns:1fr}.tl li{grid-template-columns:70px 1fr}.nav-btn{min-width:96px;padding-inline:14px}}
+@media (max-width:380px){.choices{grid-template-columns:1fr}.nav-btn{min-width:96px;padding-inline:14px}.dateline > *{padding-inline:10px}}
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
 </style>
 </head>
@@ -212,13 +196,14 @@ textarea{min-height:90px;resize:vertical}
   <p class="intro-line">بانگهێشتنامەیەک، بە خۆشەویستییەوە بۆ تۆ مۆرکراوە</p>
   <div class="envelope" id="envelope">
     <div class="env-back"></div>
-    <div class="env-card"><span>ئاراس و شیلان</span></div>
+    <div class="env-card"><span>خونچە و محمد</span></div>
     <div class="env-front" aria-hidden="true">
       <svg viewBox="0 0 300 200" preserveAspectRatio="none">
-        <polygon points="0,0 150,112 0,200" fill="#134838"/>
-        <polygon points="300,0 150,112 300,200" fill="#124433"/>
-        <polygon points="0,200 150,100 300,200" fill="#175543"/>
-        <g fill="none" stroke="#C6A15B" stroke-opacity=".45" stroke-width=".7">
+        <polygon points="0,0 150,112 0,200" fill="#F2E9DA"/>
+        <polygon points="300,0 150,112 300,200" fill="#EFE5D4"/>
+        <polygon points="0,200 150,100 300,200" fill="#F6EFE3"/>
+        <polyline points="0,200 150,100 300,200" fill="none" stroke="#C5A56A" stroke-opacity=".35" stroke-width=".6"/>
+        <g fill="none" stroke="#B8955A" stroke-opacity=".55" stroke-width=".7">
           <path d="M40 150 C 60 130, 70 110, 72 86"/><path d="M72 86 c -12 6 -16 16 -12 26 c 10 -4 14 -14 12 -26z"/>
           <path d="M66 112 c -14 2 -20 10 -20 20 c 12 0 18 -8 20 -20z"/><path d="M56 134 c -12 -2 -20 4 -22 14 c 10 2 18 -4 22 -14z"/>
           <path d="M260 150 C 240 130, 230 110, 228 86"/><path d="M228 86 c 12 6 16 16 12 26 c -10 -4 -14 -14 -12 -26z"/>
@@ -228,11 +213,11 @@ textarea{min-height:90px;resize:vertical}
     </div>
     <div class="env-flap" aria-hidden="true">
       <svg viewBox="0 0 300 116" preserveAspectRatio="none">
-        <polygon points="0,0 300,0 150,116" fill="#1A5A47"/>
-        <polygon points="0,0 300,0 150,116" fill="none" stroke="#C6A15B" stroke-opacity=".35" stroke-width=".8"/>
+        <polygon points="0,0 300,0 150,116" fill="#F8F1E6"/>
+        <polygon points="0,0 300,0 150,116" fill="none" stroke="#C5A56A" stroke-opacity=".45" stroke-width=".8"/>
       </svg>
     </div>
-    <button class="seal" id="seal" type="button" aria-label="بانگهێشتنامەکە بکەرەوە"><b>A&amp;S</b></button>
+    <button class="seal" id="seal" type="button" aria-label="بانگهێشتنامەکە بکەرەوە"><b>خ<i>&amp;</i>م</b></button>
     <div class="env-caption">بە خۆشەویستییەوە بیکەرەوە</div>
   </div>
   <button class="open-btn" id="openBtn" type="button">
@@ -245,31 +230,30 @@ textarea{min-height:90px;resize:vertical}
 <!-- ================= Pages ================= -->
 <div class="app" id="app">
   <header class="topbar">
-    <span class="brand">ئاراس و شیلان</span>
-    <span class="latin">A &amp; S</span>
+    <span class="brand">خونچە و محمد</span>
+    <span class="mono" aria-hidden="true">&amp;</span>
   </header>
   <div class="progress"><i id="bar"></i></div>
 
   <div class="stage" id="stage">
 
     <!-- 1 · Names -->
-    <section class="page bg-ivory active" data-next="بانگهێشتنامەکە ببینە">
+    <section class="page bg-cream active" data-next="بانگهێشتنامەکە ببینە">
       <div class="page-inner">
         <div class="frame">
           <div class="amp" aria-hidden="true">&amp;</div>
           <p class="eyebrow st">ئێمە هاوسەرگیری دەکەین</p>
-          <h1 class="names st">ئاراس<span class="and">و</span>شیلان</h1>
-          <p class="latin-names st">Aras &amp; Shilan</p>
+          <h1 class="names st">خونچە<span class="and">و</span>محمد</h1>
           <div class="dateline st">
-            <span class="s">پێنجشەممە</span><span class="d">١٥ی نیسان</span><span class="s">٢٠٢٧</span>
+            <span class="s">هەینی</span><span class="d">٢ی تشرینی یەکەم</span><span class="s">٢٠٢٦</span>
           </div>
-          <p class="venue-line st">هۆڵی گوڵستان · هەولێر</p>
+          <p class="venue-line st">سیتەک · ڕێگای کانی سارد</p>
         </div>
       </div>
     </section>
 
     <!-- 2 · The day -->
-    <section class="page bg-ivory">
+    <section class="page bg-cream">
       <div class="page-inner center">
         <div class="ornament st" aria-hidden="true"><svg viewBox="0 0 14 14"><rect x="3" y="3" width="8" height="8" transform="rotate(45 7 7)" fill="currentColor"/></svg></div>
         <p class="eyebrow st">سەرەتای یادگارییەکی جوان</p>
@@ -278,9 +262,9 @@ textarea{min-height:90px;resize:vertical}
         <div class="fact st" style="margin-top:18px">
           <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3.5" y="5" width="17" height="15" rx="1.5"/><path d="M3.5 9.5h17M8 3v4M16 3v4"/><path d="M7.5 13h2M11 13h2M14.5 13h2M7.5 16.5h2M11 16.5h2"/></svg>
           <span class="label">ڕۆژ</span>
-          <span class="big">١٥ی نیسانی ٢٠٢٧</span>
-          <p class="small">پێنجشەممە</p>
-          <a class="link-arrow" target="_blank" rel="noopener" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=%D8%A6%D8%A7%D9%87%DB%95%D9%86%DA%AF%DB%8C%20%D9%87%D8%A7%D9%88%D8%B3%DB%95%D8%B1%DA%AF%DB%8C%D8%B1%DB%8C%20%D8%A6%D8%A7%D8%B1%D8%A7%D8%B3%20%D9%88%20%D8%B4%DB%8C%D9%84%D8%A7%D9%86&amp;dates=20270415T160000Z/20270415T220000Z&amp;ctz=Asia/Baghdad&amp;location=%D9%87%DB%86%DA%B5%DB%8C%20%DA%AF%D9%88%DA%B5%D8%B3%D8%AA%D8%A7%D9%86%D8%8C%20%D9%87%DB%95%D9%88%D9%84%DB%8E%D8%B1">
+          <span class="big">٢ی تشرینی یەکەمی ٢٠٢٦</span>
+          <p class="small">هەینی</p>
+          <a class="link-arrow" target="_blank" rel="noopener" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=%D8%A6%D8%A7%D9%87%DB%95%D9%86%DA%AF%DB%8C%20%D9%87%D8%A7%D9%88%D8%B3%DB%95%D8%B1%DA%AF%DB%8C%D8%B1%DB%8C%20%D8%AE%D9%88%D9%86%DA%86%DB%95%20%D9%88%20%D9%85%D8%AD%D9%85%D8%AF&amp;dates=20261002T130000Z/20261002T190000Z&amp;ctz=Asia/Baghdad&amp;location=%D8%B3%DB%8C%D8%AA%DB%95%DA%A9%D8%8C%20%DA%95%DB%8E%DA%AF%D8%A7%DB%8C%20%DA%A9%D8%A7%D9%86%DB%8C%20%D8%B3%D8%A7%D8%B1%D8%AF">
             زیادکردن بۆ ساڵنامە
             <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 2 2 12M2 4v8h8"/></svg>
           </a>
@@ -289,14 +273,14 @@ textarea{min-height:90px;resize:vertical}
     </section>
 
     <!-- 3 · Place & time -->
-    <section class="page bg-ivory">
+    <section class="page bg-cream">
       <div class="page-inner">
         <div class="fact st">
           <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M12 21s-6.5-6.2-6.5-11.2a6.5 6.5 0 0 1 13 0C18.5 14.8 12 21 12 21z"/><circle cx="12" cy="9.8" r="2.4"/></svg>
           <span class="label">شوێن</span>
-          <span class="big">هۆڵی گوڵستان</span>
-          <p class="small">هەولێر، هەرێمی کوردستان</p>
-          <a class="link-arrow" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Erbil%2C%20Kurdistan%20Region">
+          <span class="big">سیتەک</span>
+          <p class="small">ڕێگای کانی سارد</p>
+          <a class="link-arrow" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=%D8%B3%DB%8C%D8%AA%DB%95%DA%A9%20%DA%A9%D8%A7%D9%86%DB%8C%20%D8%B3%D8%A7%D8%B1%D8%AF">
             ڕێگاکە بدۆزەرەوە
             <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 2 2 12M2 4v8h8"/></svg>
           </a>
@@ -304,37 +288,25 @@ textarea{min-height:90px;resize:vertical}
         <div class="fact st">
           <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="12" cy="12" r="8.5"/><path d="M12 7v5l3.2 2"/></svg>
           <span class="label">کات</span>
-          <span class="big">٧:٠٠ی ئێوارە</span>
-          <p class="small">تکایە ١٥ خولەک زووتر ئامادە بن</p>
+          <span class="big">٤ی ئێوارە</span>
         </div>
         <div class="fact st">
           <span class="label">جلوبەرگ</span>
-          <span class="dress">فەرمی · جلی کوردی بە گەرمی پێشوازی لێ دەکرێت</span>
+          <span class="dress">جلی کوردی بە گەرمی پێشوازی لێ دەکرێت</span>
+        </div>
+        <div class="notice st">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="12" r="9"/><path d="M12 7.5v5.5M12 16.2v.3"/></svg>
+          <span>تکایە، منداڵ بەشداری ئاهەنگەکە پێ ناکرێت.</span>
         </div>
       </div>
     </section>
 
-    <!-- 4 · Programme -->
-    <section class="page bg-paper">
-      <div class="page-inner">
-        <p class="eyebrow st">بەرنامەی ئێوارە</p>
-        <h2 class="st">چەند ساتێک<br><em>کە چاوەڕێیان دەکەین.</em></h2>
-        <p class="lead st" style="margin-top:8px">بۆ ئاهەنگەکە وەرە، بۆ یادگارییەکان بمێنەوە.</p>
-        <ol class="tl st">
-          <li><time>٧:٠٠ی ئێوارە</time><div><h3>پێشوازی میوانان</h3><p>بەخێرهاتن، چا و شیرینی لە باخچەی هۆڵەکە.</p></div></li>
-          <li><time>٨:٠٠ی ئێوارە</time><div><h3>هاتنی بووک و زاوا</h3><p>یەکەم هەنگاومان بەیەکەوە، لەبەردەم ئێوە.</p></div></li>
-          <li><time>٩:٠٠ی شەو</time><div><h3>شێوی ئێوارە</h3><p>خوانێکی گەرم لەگەڵ خێزان و هاوڕێیان.</p></div></li>
-          <li><time>١٠:٠٠ی شەو</time><div><h3>هەڵپەڕکێ و ئاهەنگ</h3><p>دەست لە دەست، تا درەنگانی شەو.</p></div></li>
-        </ol>
-      </div>
-    </section>
-
-    <!-- 5 · Without you -->
-    <section class="page bg-dark" data-dark data-next="وەڵام بدەرەوە">
+    <!-- 4 · Without you -->
+    <section class="page bg-deep" data-next="وەڵام بدەرەوە">
       <div class="page-inner center">
         <p class="eyebrow st">شوێنت لە چیرۆکەکەماندا</p>
         <h2 class="st">بێ تۆ<br><em>هەمان شت نابێت.</em></h2>
-        <p class="note st">تکایە تا ١ی نیسانی ٢٠٢٧ ئاگادارمان بکەرەوە.<br>بە پەرۆشەوە چاوەڕێی ئاهەنگگێڕان لەگەڵ تۆین.</p>
+        <p class="note st">تکایە بە زووترین کات ئاگادارمان بکەرەوە.<br>بە پەرۆشەوە چاوەڕێی ئاهەنگگێڕان لەگەڵ تۆین.</p>
         <div class="st">
           <div class="cd">
             <div><b id="cdD">٠</b><span>ڕۆژ</span></div>
@@ -348,7 +320,7 @@ textarea{min-height:90px;resize:vertical}
       </div>
     </section>
 
-    <!-- 6 · RSVP -->
+    <!-- 5 · RSVP -->
     <section class="page bg-paper" data-nonext>
       <div class="page-inner">
         <form class="card st" id="rsvpForm" novalidate>
@@ -356,7 +328,7 @@ textarea{min-height:90px;resize:vertical}
           <h2>دێیت بۆ لامان؟</h2>
           <div class="field">
             <label for="gName">ناوی تەواو</label>
-            <input type="text" id="gName" autocomplete="name" placeholder="ناوت وەک دەتەوێت لەسەر کارتی مێزەکە بێت">
+            <input type="text" id="gName" autocomplete="name" placeholder="ناوی خۆت بنووسە">
           </div>
           <fieldset class="field">
             <legend>وەڵامەکەت</legend>
@@ -365,17 +337,11 @@ textarea{min-height:90px;resize:vertical}
               <div class="choice"><input type="radio" name="attend" id="aNo" value="no"><label for="aNo">بە داخەوە ناتوانم بێم</label></div>
             </div>
           </fieldset>
-          <div class="field" id="countField">
-            <label for="gCount">ژمارەی میوانان (لەگەڵ خۆت)</label>
-            <select id="gCount">
-              <option value="1">١ کەس</option><option value="2">٢ کەس</option><option value="3">٣ کەس</option><option value="4">٤ کەس</option><option value="5">٥ کەس</option>
-            </select>
-          </div>
           <div class="field">
             <label for="gNote">نامەیەکی بچووک <span class="opt">(ئارەزوومەندانە)</span></label>
             <textarea id="gNote" placeholder="چەند وشەیەکی خۆشەویستی بۆ بووک و زاوا…"></textarea>
           </div>
-          <a class="send" id="sendBtn" href="https://wa.me/" target="_blank" rel="noopener">
+          <a class="send" id="sendBtn" href="https://wa.me/9647741601997" target="_blank" rel="noopener">
             <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.2A9.8 9.8 0 0 0 3.6 17l-1.4 4.8 4.9-1.3A9.8 9.8 0 1 0 12 2.2zm0 17.9a8.1 8.1 0 0 1-4.2-1.1l-.3-.2-2.9.8.8-2.8-.2-.3A8.1 8.1 0 1 1 12 20.1zm4.5-6c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.6 6.6 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .1-1.3c0-.1-.2-.2-.4-.3z"/></svg>
             بە واتسئاپ بینێرە
           </a>
@@ -385,14 +351,14 @@ textarea{min-height:90px;resize:vertical}
       </div>
     </section>
 
-    <!-- 7 · Thank you -->
-    <section class="page bg-dark" data-dark data-nonext>
+    <!-- 6 · Thank you -->
+    <section class="page bg-deep" data-nonext>
       <div class="page-inner center">
         <svg class="heart st" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" style="margin:0 auto 10px;display:block"><path d="M12 20s-7.5-4.6-7.5-10.2A4.3 4.3 0 0 1 12 7.2a4.3 4.3 0 0 1 7.5 2.6C19.5 15.4 12 20 12 20z"/></svg>
         <h2 class="st">سوپاس<br><em>بۆ وەڵامەکەت.</em></h2>
         <p class="note st" id="thanksNote">بە هیوای بینینت لەو ڕۆژە جوانەدا.</p>
-        <p class="sig st">Aras &amp; Shilan</p>
-        <p class="note st" style="margin-top:4px">١٥ · ٠٤ · ٢٠٢٧</p>
+        <p class="sig st">خونچە و محمد</p>
+        <p class="note st" style="margin-top:4px">٢ · ١٠ · ٢٠٢٦</p>
         <div class="st"><button class="replay" id="replay" type="button">دووبارە کردنەوەی بانگهێشتنامەکە</button></div>
       </div>
     </section>
@@ -415,17 +381,14 @@ textarea{min-height:90px;resize:vertical}
 
 <script>
 (function(){
-  /* ====== EDIT THESE ====== */
-  const HOST_PHONE = "";          // WhatsApp number, digits only with country code, e.g. "9647501234567"
-  const COUPLE = "ئاراس و شیلان";
-  const EVENT_UTC = Date.UTC(2027, 3, 15, 16, 0, 0); // 15 Apr 2027, 7:00 PM Erbil (UTC+3)
-  /* ======================== */
+  const HOST_PHONE = "9647741601997";
+  const COUPLE = "خونچە و محمد";
+  const EVENT_UTC = Date.UTC(2026, 9, 2, 13, 0, 0); // Fri 2 Oct 2026, 4:00 PM Kurdistan (UTC+3)
 
   const ku = n => String(n).replace(/\d/g, d => "٠١٢٣٤٥٦٧٨٩"[d]);
   const $ = id => document.getElementById(id);
   const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  /* gold dust */
   const dust = $("dust");
   for (let i = 0; i < 26; i++) {
     const s = document.createElement("i");
@@ -435,10 +398,9 @@ textarea{min-height:90px;resize:vertical}
     dust.appendChild(s);
   }
 
-  /* ---------- pages ---------- */
-  const app = $("app");
+  /* pages */
   const pages = Array.from(document.querySelectorAll(".page"));
-  const navCount = pages.length - 1; // thank-you page not in dots
+  const navCount = pages.length - 1;
   const dots = $("dots");
   for (let i = 0; i < navCount; i++) {
     const b = document.createElement("button");
@@ -449,20 +411,13 @@ textarea{min-height:90px;resize:vertical}
   let cur = 0;
   function go(n){
     if (n < 0 || n >= pages.length || n === cur) return;
-    const dir = n > cur ? 1 : -1;
-    pages.forEach((p, i) => {
-      p.classList.toggle("active", i === n);
-      p.classList.toggle("prev", i < n);
-    });
-    // restart entrance animations
+    pages.forEach((p, i) => { p.classList.toggle("active", i === n); p.classList.toggle("prev", i < n); });
     pages[n].querySelectorAll(".st").forEach(el => { el.style.animation = "none"; el.offsetHeight; el.style.animation = ""; });
     pages[n].scrollTop = 0;
-    cur = n;
-    update();
+    cur = n; update();
   }
   function update(){
     const p = pages[cur];
-    app.classList.toggle("dark", p.hasAttribute("data-dark"));
     Array.from(dots.children).forEach((d, i) => d.classList.toggle("on", i === Math.min(cur, navCount-1)));
     $("bar").style.width = ((cur+1) / pages.length * 100) + "%";
     $("prevBtn").disabled = cur === 0 || cur === pages.length-1;
@@ -474,10 +429,9 @@ textarea{min-height:90px;resize:vertical}
   $("prevBtn").addEventListener("click", () => go(cur-1));
   document.addEventListener("keydown", e => {
     if (!introDone || /INPUT|TEXTAREA|SELECT/.test(e.target.tagName)) return;
-    if (e.key === "ArrowLeft" && !pages[cur].hasAttribute("data-nonext")) go(cur+1);   // RTL: left = forward
+    if (e.key === "ArrowLeft" && !pages[cur].hasAttribute("data-nonext")) go(cur+1);
     if (e.key === "ArrowRight" && cur > 0 && cur < pages.length-1) go(cur-1);
   });
-  // swipe (RTL: drag finger to the right = next)
   let sx = 0, sy = 0;
   $("stage").addEventListener("touchstart", e => { sx = e.touches[0].clientX; sy = e.touches[0].clientY; }, {passive:true});
   $("stage").addEventListener("touchend", e => {
@@ -489,7 +443,7 @@ textarea{min-height:90px;resize:vertical}
   }, {passive:true});
   update();
 
-  /* ---------- envelope ---------- */
+  /* envelope */
   const intro = $("intro"), env = $("envelope");
   let opening = false, introDone = false;
   function openInvite(){
@@ -508,7 +462,7 @@ textarea{min-height:90px;resize:vertical}
     go(0);
   });
 
-  /* ---------- countdown ---------- */
+  /* countdown */
   function tick(){
     let diff = Math.max(0, EVENT_UTC - Date.now());
     const d = Math.floor(diff / 864e5); diff -= d*864e5;
@@ -520,15 +474,14 @@ textarea{min-height:90px;resize:vertical}
   }
   tick(); setInterval(tick, 1000);
 
-  /* ---------- RSVP -> WhatsApp ---------- */
-  const nameEl = $("gName"), countEl = $("gCount"), noteEl = $("gNote"), send = $("sendBtn"), err = $("err");
+  /* RSVP -> WhatsApp */
+  const nameEl = $("gName"), noteEl = $("gNote"), send = $("sendBtn"), err = $("err");
   const attend = () => (document.querySelector('input[name="attend"]:checked') || {}).value;
   function build(){
     const a = attend();
-    $("countField").hidden = a === "no";
     const lines = ["بانگهێشتی هاوسەرگیری " + COUPLE, ""];
     lines.push("ناو: " + (nameEl.value.trim() || "—"));
-    if (a === "yes") lines.push("وەڵام: بە دڵخۆشییەوە دێم ✓", "ژمارەی میوانان: " + ku(countEl.value));
+    if (a === "yes") lines.push("وەڵام: بە دڵخۆشییەوە دێم ✓");
     else if (a === "no") lines.push("وەڵام: بە داخەوە ناتوانم بێم");
     if (noteEl.value.trim()) lines.push("", "نامە: " + noteEl.value.trim());
     send.href = "https://wa.me/" + HOST_PHONE + "?text=" + encodeURIComponent(lines.join("\n"));
